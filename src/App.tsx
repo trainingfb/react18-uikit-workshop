@@ -13,6 +13,8 @@ function App() {
 
       <div className="flex flex-col gap-5">
 
+        <FB.Weather city="Milano "/>
+
         <FB.Heading />
         <FB.Heading size={2}/>
         <FB.Heading size={3}/>
