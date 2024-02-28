@@ -1,5 +1,5 @@
 // utils/add.test.ts
-// import { expect, test } from 'vitest'; /// <--- REMOVED
+import {expect, test } from 'vitest'
 import { add } from './add.ts';
 
 test('should sum two numbers', () => {

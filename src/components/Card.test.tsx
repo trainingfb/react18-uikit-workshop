@@ -1,4 +1,5 @@
 // components/Card.test.tsx
+import {expect, describe, test } from 'vitest'
 import { render, screen } from '@testing-library/react';
 import { Card } from './Card.tsx';
 
@@ -8,6 +9,7 @@ describe('Card Component', () => {
     render(<Card title="hello"/>);
     expect(screen.getByText('hello')).toBeInTheDocument()
   });
+
   test('render children', () => {
     render(<Card title="hello">lorem ipsum</Card>);
     expect(screen.getByText('lorem ipsum')).toBeInTheDocument()
