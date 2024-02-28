@@ -1,4 +1,4 @@
-// Card.stories.tsx
+// Weather.stories.tsx
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 import type { Meta, StoryObj } from '@storybook/react';
 
