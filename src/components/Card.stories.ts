@@ -37,7 +37,7 @@ export const TitleAndChildren: Story = {
     const canvas = within(canvasElement);
 
     const title = canvas.getByText('My Awesome Card');
-    const children = canvas.getByText('lorem ipsum');
+    const children = canvas.getByText('lorem ipsum...');
     expect(title).toBeInTheDocument()
     expect(children).toBeInTheDocument()
   },
