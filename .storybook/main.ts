@@ -9,7 +9,9 @@ const config: StorybookConfig = {
     "@storybook/addon-essentials",
     "@storybook/addon-onboarding",
     "@storybook/addon-interactions",
-    '@storybook/addon-a11y', //👈 The a11y addon goes here
+    '@storybook/addon-a11y',
+    '@storybook/addon-interactions', // 👈 Register the addon
+
   ],
   framework: {
     name: "@storybook/react-vite",
@@ -20,4 +22,3 @@ const config: StorybookConfig = {
   },
 };
 export default config;
-0
