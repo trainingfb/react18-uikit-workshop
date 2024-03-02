@@ -2,7 +2,7 @@
 import { expect } from '@storybook/jest';
 // More on how to set up stories at: https://storybook.js.org/docs/writing-stories#default-export
 import type { Meta, StoryObj } from '@storybook/react';
-import { userEvent, within } from '@storybook/test';
+import { within } from '@storybook/test';
 
 import { Card } from './Card.tsx';
 
