@@ -1,4 +1,6 @@
+import { expect } from '@storybook/jest';
 import type { Meta, StoryObj } from '@storybook/react';
+import { userEvent, within } from '@storybook/test';
 
 import { Button } from './Button';
 
@@ -25,20 +27,38 @@ export const Variant: Story = {
     variant: 'primary',
     children: 'CLICK ME',
   },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
 
+    const button = canvas.getByText('CLICK ME', {
+      selector: 'button',
+    });
+
+    userEvent.click(button);
+    expect(button).toBeInTheDocument()
+  },
 };
 
-export const Attributes: Story = {
+export const Disabled: Story = {
   args: {
     variant: 'primary',
     children: 'CLICK ME',
     disabled: true,
-    type: 'submit'
   },
   argTypes: {
     type: { control: 'inline-radio', options: ['button', 'submit'] },
     variant: { control: 'inline-radio' }
-  }
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const button = canvas.getByText('CLICK ME', {
+      selector: 'button',
+    });
+
+    expect(button).toBeDisabled()
+  },
+
 };
 
 export const Events: Story = {
@@ -50,5 +70,15 @@ export const Events: Story = {
     //  backgroundColor: { control: 'color' },
     onClick: { action: 'onClick' },
     onMouseOver: { action: 'onMouseOver' },
+  },
+  play: async ({ canvasElement }) => {
+    const canvas = within(canvasElement);
+
+    const button = canvas.getByText('CLICK ME', {
+      selector: 'button',
+    });
+
+    userEvent.click(button);
+    userEvent.hover(button);
   },
 };
